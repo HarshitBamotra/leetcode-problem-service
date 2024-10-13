@@ -47,11 +47,11 @@ class ProblemRepo{
 
     async deleteProblem(id){
         try {
-            const response = await Problem.deleteOne({_id: id});
-            if(!response.deletedCount){
+            const deletedProblem = await Problem.findByIdAndDelete(id);
+            if(!deletedProblem){
                 throw new NotFoundError("Problem", id);
             }
-            return response;
+            return deletedProblem;
         } catch (error) {
             console.log(error);
             throw error;
