@@ -1,3 +1,4 @@
+const { response } = require("express");
 const NotFoundError = require("../errors/notFound.error");
 const {Problem} = require("../models");
 
@@ -38,6 +39,19 @@ class ProblemRepo{
             }
 
             return problem;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+
+    async deleteProblem(id){
+        try {
+            const response = await Problem.deleteOne({_id: id});
+            if(!response.deletedCount){
+                throw new NotFoundError("Problem", id);
+            }
+            return response;
         } catch (error) {
             console.log(error);
             throw error;
