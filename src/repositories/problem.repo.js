@@ -17,6 +17,16 @@ class ProblemRepo{
             throw error;
         }
     }
+
+    async getAllProblems(){
+        try {
+            const problems = await Problem.find({});
+            return problems;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
 }
 
 
