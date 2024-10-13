@@ -3,10 +3,10 @@ const { ProblemController } = require("../../controllers");
 
 const problemRouter = express.Router();
 
+problemRouter.post("/", ProblemController.addProblem);
 problemRouter.get("/ping", ProblemController.pingProblemController);
 problemRouter.get("/:id", ProblemController.getProblem);
 problemRouter.get("/", ProblemController.getProblems);
-problemRouter.post("/", ProblemController.addProblem);
 problemRouter.delete("/:id", ProblemController.deleteProblem);
 problemRouter.put("/:id", ProblemController.updateProblem);
 
