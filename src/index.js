@@ -18,7 +18,7 @@ app.use("/api", apiRouter);
 
 app.get('/ping', (req, res)=>{
     return res.json({
-        msg: "Problem servive is up"
+        msg: "Problem servise is up"
     });
 });
 

@@ -1,5 +1,3 @@
-
-
 module.exports = {
-    ProblemRepo : require("./problem.repo")
+    ProblemRepository : require("./problem.repo")
 };
