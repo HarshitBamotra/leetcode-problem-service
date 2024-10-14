@@ -43,7 +43,6 @@ class ProblemService{
             const response = await this.problemRepo.deleteProblem(id);
             return response;
         } catch (error) {
-            console.log(error);
             throw error;
         }
     }

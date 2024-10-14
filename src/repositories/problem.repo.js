@@ -1,6 +1,7 @@
 const { response } = require("express");
 const NotFoundError = require("../errors/notFound.error");
 const {Problem} = require("../models");
+const logger = require("../config/logger.config");
 
 class ProblemRepo{
     async createProblem(problemData){
@@ -49,6 +50,7 @@ class ProblemRepo{
         try {
             const deletedProblem = await Problem.findByIdAndDelete(id);
             if(!deletedProblem){
+                logger.error(`Problem with id: ${id} was not found`);
                 throw new NotFoundError("Problem", id);
             }
             return deletedProblem;
@@ -62,6 +64,7 @@ class ProblemRepo{
         try {
             const updatedProblem = await Problem.findByIdAndUpdate(id, data, {new: true});
             if(!updatedProblem){
+
                 throw new NotFoundError("Problem", id);
             }
             return updatedProblem;
