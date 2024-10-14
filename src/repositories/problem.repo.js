@@ -57,6 +57,19 @@ class ProblemRepo{
             throw error;
         }
     }
+
+    async updateProblem(id, data){
+        try {
+            const updatedProblem = await Problem.findByIdAndUpdate(id, data, {new: true});
+            if(!updatedProblem){
+                throw new NotFoundError("Problem", id);
+            }
+            return updatedProblem;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
 }
 
 
