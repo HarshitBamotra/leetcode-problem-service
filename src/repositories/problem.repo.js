@@ -1,3 +1,4 @@
+const { response } = require("express");
 const NotFoundError = require("../errors/notFound.error");
 const {Problem} = require("../models");
 
@@ -38,6 +39,32 @@ class ProblemRepo{
             }
 
             return problem;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+
+    async deleteProblem(id){
+        try {
+            const deletedProblem = await Problem.findByIdAndDelete(id);
+            if(!deletedProblem){
+                throw new NotFoundError("Problem", id);
+            }
+            return deletedProblem;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+
+    async updateProblem(id, data){
+        try {
+            const updatedProblem = await Problem.findByIdAndUpdate(id, data, {new: true});
+            if(!updatedProblem){
+                throw new NotFoundError("Problem", id);
+            }
+            return updatedProblem;
         } catch (error) {
             console.log(error);
             throw error;

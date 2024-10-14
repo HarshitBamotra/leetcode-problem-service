@@ -37,6 +37,26 @@ class ProblemService{
             throw error;
         }
     }
+
+    async deleteProblem(id){
+        try {
+            const response = await this.problemRepo.deleteProblem(id);
+            return response;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+
+    async updateProblem(id, data){
+        try {
+            const response = await this.problemRepo.updateProblem(id, data);
+            return response;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
 }
 
 module.exports = ProblemService;
