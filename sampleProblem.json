@@ -1,0 +1,27 @@
+{
+    "title": "Square Number",
+    "description": "\n### Given a number `n`, calculate the square of `n`.",
+    "difficulty":"easy",
+    "testCases": [
+        {
+            "input":"2",
+            "output":"4"
+        },
+        {
+            "input":"3",
+            "output":"9"
+        },
+        {
+            "input": "5",
+            "output":"25"
+        }
+    ],
+    "codeStubs":[
+        {
+            "language":"CPP",
+            "startSnippet":"#include<bits/stdc++.h> \n using namespace std; \n",
+            "userSnippet":"class Solution{\n    int calculateSquare(int n){\n\n    }\n};",
+            "endSnippet":"int main(){\n    int n;\n    cin>>n;\n    Solution s;\n   cout<<s.calculateSquare(n);\n    return 0;\n}"
+        }
+    ]
+}

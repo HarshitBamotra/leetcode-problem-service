@@ -11,6 +11,7 @@ class ProblemRepo{
                 description: problemData.description,
                 testCases: (problemData.testCases) ? problemData.testCases : [],
                 difficulty: problemData.difficulty ? problemData.difficulty : "easy",
+                codeStubs: problemData.codeStubs
             });
             
             return problem;
