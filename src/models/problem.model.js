@@ -32,7 +32,7 @@ const problemSchema = new mongoose.Schema({
         {
             language: {
                 type: String,
-                enum: ["CPP", "JAVA", "PYTHON"],
+                enum: ["C_CPP", "JAVA", "PYTHON"],
                 required: true
             },
             startSnippet:{

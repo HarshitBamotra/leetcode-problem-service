@@ -18,7 +18,7 @@
     ],
     "codeStubs":[
         {
-            "language":"CPP",
+            "language":"C_CPP",
             "startSnippet":"#include<bits/stdc++.h> \n using namespace std; \n",
             "userSnippet":"class Solution{\n    int calculateSquare(int n){\n\n    }\n};",
             "endSnippet":"int main(){\n    int n;\n    cin>>n;\n    Solution s;\n   cout<<s.calculateSquare(n);\n    return 0;\n}"
